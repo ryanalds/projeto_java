@@ -1,3 +1,5 @@
+package auth;
+import model.*;
 import java.util.List;
 
 public class AuthService {

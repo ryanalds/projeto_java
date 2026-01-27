@@ -1,10 +1,15 @@
+package ecomerce;
+
+import auth.AuthService;
+import model.*;
+import telas.*;
 import java.util.*;
 
 public class Main {
 
     public static void main (String[] args){
 
-        // Login do Usuario:
+        // Login do model.Usuario:
 
         Scanner input = new Scanner(System.in);
 
