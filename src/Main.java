@@ -14,6 +14,13 @@ public class Main {
         System.out.println("Digite sua senha: ");
         String senha = input.nextLine();
 
+        Usuario logado = AuthService.autenticar(email, senha, usuarios);
+        if (logado != null){
+            System.out.println("Login realizado com sucesso");
+        }
+        else {
+            System.out.println("E-mail ou Senhas invalidos");
+        }
 
 
 
