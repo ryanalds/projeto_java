@@ -36,7 +36,7 @@ public class TelaCompras implements Tela {
     }
 
     public void listarProdutos() {
-        System.out.println("....");
+        produtos.getProdutos();
     }
 
     public void comprarProduto(){

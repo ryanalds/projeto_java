@@ -2,16 +2,18 @@ package telas;
 
 import model.ProdutosEstoque;
 import model.Produto;
-import  java.util.Scanner;
+
+import java.util.HashMap;
+import java.util.*;
 
 public class TelaVendas implements Tela {
 
     Scanner input = new Scanner(System.in);
-        private ProdutosEstoque produtos; // declarando lista local baseada na lista global
+    private ProdutosEstoque produtos; // declarando lista local baseada na lista global
 
-        public TelaVendas(ProdutosEstoque estoque) {
-            this.produtos = estoque;
-        }
+    public TelaVendas(ProdutosEstoque estoque) {
+        this.produtos = estoque;
+    }
 
     // Tela de opções para o usuario escolher pelo número.
     @Override
@@ -50,11 +52,17 @@ public class TelaVendas implements Tela {
     }
 
     public void deletarProduto() {
-        System.out.println("....");
+        System.out.println("Digite o número do item que deseja deletar?");
+
+        produtos.getProdutos();
+        int excluido = input.nextInt();
+
+        produtos.removeProduto(excluido);
+        System.out.println("Produto removido com sucesso!");
     }
 
     public void voltar() {
-        System.out.println("....");
+        return;
     }
 
 
