@@ -40,7 +40,15 @@ public class TelaCompras implements Tela {
     }
 
     public void comprarProduto(){
-        System.out.println("....");
+        produtos.getProdutos();
+        System.out.println("Selecione o produto que vocÊ deseja comprar: ");
+        int selecionado = input.nextInt();
+
+        System.out.println(produtos.getProduto(selecionado));
+        System.out.println("Qual a forma de pagamento");
+        System.out.println("1 --- Credito");
+        System.out.println("2 --- Debito");
+        System.out.println("3 --- Pix");
     }
 
     public void voltar() {

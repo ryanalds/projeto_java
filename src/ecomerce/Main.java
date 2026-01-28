@@ -5,11 +5,12 @@ import model.*;
 
 import telas.*;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
         // Login do Usuario:
@@ -36,8 +37,7 @@ public class Main {
         // Opções do Menu:
 
         ProdutosEstoque estoque = new ProdutosEstoque(); // Criando lsta global, para armazenar os produtos
-        estoque.addProduto(new Produto("Furadeira", 300));
-        estoque.addProduto(new Produto("Martelo", 50));
+        estoque.carregarDeArquivo("produtos.txt"); // Carrega lista com produtos salvos no arquivo .txt
 
         // Loop para o codigo voltar ao menu a depender da escolha do usuario
 
@@ -54,6 +54,7 @@ public class Main {
 
             if (escolha == 1) {
                 telaAtual = new TelaCompras(estoque);
+
                 telaAtual.mostrar();
                 int opcao = input.nextInt();
                 telaAtual.executarOpcao(opcao);

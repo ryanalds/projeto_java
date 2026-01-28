@@ -3,6 +3,7 @@ package telas;
 import model.ProdutosEstoque;
 import model.Produto;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.*;
 
@@ -26,7 +27,7 @@ public class TelaVendas implements Tela {
     }  // Tela de opções para o usuario escolher pelo número.
 
     @Override
-    public void executarOpcao(int opcao) {
+    public void executarOpcao(int opcao) throws IOException {
         switch (opcao) {
             case 1 -> cadastrarProduto();
             case 2 -> deletarProduto();
@@ -35,7 +36,7 @@ public class TelaVendas implements Tela {
         }
     } //  Switch para selecionar o metodo de acordo com a opção selecionada
 
-    public void cadastrarProduto() {
+    public void cadastrarProduto() throws IOException {
 
         System.out.println("Digite o nome do produto: ");
         String nomeProduto = input.nextLine();
@@ -45,16 +46,19 @@ public class TelaVendas implements Tela {
 
         Produto produto = new Produto(nomeProduto, valorProduto);
         produtos.addProduto(produto);
+        produtos.salvarEmArquivo("produtos.txt");
+        System.out.println("Produto cadastrado com sucesso!");
 
     }
 
-    public void deletarProduto() {
+    public void deletarProduto() throws IOException {
         System.out.println("Digite o número do item que deseja deletar?");
 
         produtos.getProdutos();
         int excluido = input.nextInt();
 
         produtos.removeProduto(excluido);
+        produtos.salvarEmArquivo("produtos.txt");
         System.out.println("Produto removido com sucesso!");
     }
 
