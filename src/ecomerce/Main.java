@@ -2,6 +2,7 @@ package ecomerce;
 
 import auth.AuthService;
 import model.*;
+
 import telas.*;
 import java.util.*;
 
@@ -9,12 +10,14 @@ public class Main {
 
     public static void main (String[] args){
 
-        // Login do model.Usuario:
+
+        // Login do Usuario:
 
         Scanner input = new Scanner(System.in);
 
         List<Usuario> usuarios = new ArrayList<>();
         usuarios.add(new Usuario("Ryan Almeida", "ryanalds21@gmail.com", "poo123@"));
+
 
         System.out.println("Digite seu e-mail: ");
         String email = input.nextLine();
@@ -32,6 +35,8 @@ public class Main {
 
         // Opções do Menu:
 
+        ProdutosEstoque estoque = new ProdutosEstoque(); // Criando lsta global, para armazenar os produtos
+
         System.out.println("Bem vindo! Digite o número da opção que deseja:");
         System.out.println(System.lineSeparator());
         System.out.println("1 --- Comprar");
@@ -42,9 +47,9 @@ public class Main {
         Tela telaAtual;
 
         if (escolha == 1 ){
-            telaAtual = new TelaCompras();
+            telaAtual = new TelaCompras(estoque);
         }else if (escolha == 2) {
-            telaAtual = new TelaVendas();
+            telaAtual = new TelaVendas(estoque);
         }else {
             System.out.println("Oção invalida");
             return;

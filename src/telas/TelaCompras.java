@@ -1,6 +1,19 @@
 package telas;
 
+import model.ProdutosEstoque;
+import model.Produto;
+import  java.util.Scanner;
+
+
 public class TelaCompras implements Tela {
+
+    Scanner input = new Scanner(System.in);
+    private ProdutosEstoque produtos; // declarando lista local baseada na lista global
+
+    public TelaCompras(ProdutosEstoque estoque) {
+        this.produtos = estoque;
+    }
+
 
     @Override
     public void mostrar() {

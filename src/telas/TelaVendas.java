@@ -1,16 +1,30 @@
 package telas;
 
+import model.ProdutosEstoque;
+import model.Produto;
+import  java.util.Scanner;
+
 public class TelaVendas implements Tela {
 
+    Scanner input = new Scanner(System.in);
+        private ProdutosEstoque produtos; // declarando lista local baseada na lista global
+
+        public TelaVendas(ProdutosEstoque estoque) {
+            this.produtos = estoque;
+        }
+
+    // Tela de opções para o usuario escolher pelo número.
     @Override
     public void mostrar() {
         System.out.println("=== Area de Vendas ===");
         System.out.println(System.lineSeparator());
-        System.out.println("1 --- Cadastrar model.Produto");
+        System.out.println("1 --- Cadastrar Produto");
         System.out.println("2 --- Deletar produto");
         System.out.println("3 --- Voltar");
 
     }
+
+    //  Switch para selecionar o metodo de acordo com a opção selecionada
 
     @Override
     public void executarOpcao(int opcao) {
@@ -23,7 +37,16 @@ public class TelaVendas implements Tela {
     }
 
     public void cadastrarProduto() {
-        System.out.println("....");
+
+        System.out.println("Digite o nome do produto: ");
+        String nomeProduto = input.nextLine();
+        System.out.println("Digite o valor do produto: ");
+        double valorProduto = input.nextDouble();
+        input.nextLine();
+
+        Produto produto = new Produto(nomeProduto, valorProduto);
+        produtos.addProduto(produto);
+
     }
 
     public void deletarProduto() {
