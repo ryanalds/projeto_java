@@ -39,6 +39,8 @@ public class Main {
         estoque.addProduto(new Produto("Furadeira", 300));
         estoque.addProduto(new Produto("Martelo", 50));
 
+        // Loop para o codigo voltar ao menu a depender da escolha do usuario
+
         while (true) {
             System.out.println("Bem vindo! Digite o número da opção que deseja:");
             System.out.println(System.lineSeparator());
@@ -63,6 +65,7 @@ public class Main {
                 telaAtual.executarOpcao(opcao);
 
             } else if ( escolha == 3) {
+                System.out.println("Obrigado e volte sempre!");
                 break;
 
             } else {

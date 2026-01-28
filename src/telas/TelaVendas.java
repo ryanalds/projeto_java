@@ -15,7 +15,6 @@ public class TelaVendas implements Tela {
         this.produtos = estoque;
     }
 
-    // Tela de opções para o usuario escolher pelo número.
     @Override
     public void mostrar() {
         System.out.println("=== Area de Vendas ===");
@@ -24,9 +23,7 @@ public class TelaVendas implements Tela {
         System.out.println("2 --- Deletar produto");
         System.out.println("3 --- Voltar");
 
-    }
-
-    //  Switch para selecionar o metodo de acordo com a opção selecionada
+    }  // Tela de opções para o usuario escolher pelo número.
 
     @Override
     public void executarOpcao(int opcao) {
@@ -36,7 +33,7 @@ public class TelaVendas implements Tela {
             case 3 -> voltar();
             default -> System.out.println("Opção invalida");
         }
-    }
+    } //  Switch para selecionar o metodo de acordo com a opção selecionada
 
     public void cadastrarProduto() {
 

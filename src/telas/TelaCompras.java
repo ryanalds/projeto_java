@@ -44,7 +44,7 @@ public class TelaCompras implements Tela {
     }
 
     public void voltar() {
-        System.out.println("....");
+        return;
     }
 
 }
