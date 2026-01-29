@@ -1,2 +1,5 @@
-Martelete ;1200.0
-piripimps;6.0
+Martelete;1200.0
+Teclado;150.0
+Espeto para churrasco;78.0
+Creatina;99.0
+Smart TV;3500.0
