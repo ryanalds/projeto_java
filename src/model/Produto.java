@@ -18,4 +18,7 @@ public class Produto {
     public double getValor() {
         return valor;
     }
+    public String getNome() {
+        return nome;
+    }
 }

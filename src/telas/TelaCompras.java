@@ -1,6 +1,19 @@
 package telas;
 
+import model.ProdutosEstoque;
+import model.Produto;
+import  java.util.Scanner;
+
+
 public class TelaCompras implements Tela {
+
+    Scanner input = new Scanner(System.in);
+    private ProdutosEstoque produtos; // declarando lista local baseada na lista global
+
+    public TelaCompras(ProdutosEstoque estoque) {
+        this.produtos = estoque;
+    }
+
 
     @Override
     public void mostrar() {
@@ -23,15 +36,23 @@ public class TelaCompras implements Tela {
     }
 
     public void listarProdutos() {
-        System.out.println("....");
+        produtos.getProdutos();
     }
 
     public void comprarProduto(){
-        System.out.println("....");
+        produtos.getProdutos();
+        System.out.println("Selecione o produto que vocÊ deseja comprar: ");
+        int selecionado = input.nextInt();
+
+        System.out.println(produtos.getProduto(selecionado));
+        System.out.println("Qual a forma de pagamento");
+        System.out.println("1 --- Credito");
+        System.out.println("2 --- Debito");
+        System.out.println("3 --- Pix");
     }
 
     public void voltar() {
-        System.out.println("....");
+        return;
     }
 
 }

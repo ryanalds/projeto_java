@@ -1,37 +1,69 @@
 package telas;
 
+import model.ProdutosEstoque;
+import model.Produto;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.*;
+
 public class TelaVendas implements Tela {
+
+    Scanner input = new Scanner(System.in);
+    private ProdutosEstoque produtos; // declarando lista local baseada na lista global
+
+    public TelaVendas(ProdutosEstoque estoque) {
+        this.produtos = estoque;
+    }
 
     @Override
     public void mostrar() {
         System.out.println("=== Area de Vendas ===");
         System.out.println(System.lineSeparator());
-        System.out.println("1 --- Cadastrar model.Produto");
+        System.out.println("1 --- Cadastrar Produto");
         System.out.println("2 --- Deletar produto");
         System.out.println("3 --- Voltar");
 
-    }
+    }  // Tela de opções para o usuario escolher pelo número.
 
     @Override
-    public void executarOpcao(int opcao) {
+    public void executarOpcao(int opcao) throws IOException {
         switch (opcao) {
             case 1 -> cadastrarProduto();
             case 2 -> deletarProduto();
             case 3 -> voltar();
             default -> System.out.println("Opção invalida");
         }
+    } //  Switch para selecionar o metodo de acordo com a opção selecionada
+
+    public void cadastrarProduto() throws IOException {
+
+        System.out.println("Digite o nome do produto: ");
+        String nomeProduto = input.nextLine();
+        System.out.println("Digite o valor do produto: ");
+        double valorProduto = input.nextDouble();
+        input.nextLine();
+
+        Produto produto = new Produto(nomeProduto, valorProduto);
+        produtos.addProduto(produto);
+        produtos.salvarEmArquivo("produtos.txt");
+        System.out.println("Produto cadastrado com sucesso!");
+
     }
 
-    public void cadastrarProduto() {
-        System.out.println("....");
-    }
+    public void deletarProduto() throws IOException {
+        System.out.println("Digite o número do item que deseja deletar?");
 
-    public void deletarProduto() {
-        System.out.println("....");
+        produtos.getProdutos();
+        int excluido = input.nextInt();
+
+        produtos.removeProduto(excluido);
+        produtos.salvarEmArquivo("produtos.txt");
+        System.out.println("Produto removido com sucesso!");
     }
 
     public void voltar() {
-        System.out.println("....");
+        return;
     }
 
 
