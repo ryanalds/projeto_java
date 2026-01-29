@@ -18,11 +18,15 @@ public class TelaVendas implements Tela {
 
     @Override
     public void mostrar() {
+
+        System.out.println();
         System.out.println("=== Area de Vendas ===");
-        System.out.println(System.lineSeparator());
+        System.out.println();
         System.out.println("1 --- Cadastrar Produto");
         System.out.println("2 --- Deletar produto");
         System.out.println("3 --- Voltar");
+        System.out.println();
+        System.out.print("Digite a opção que deseja: ");
 
     }  // Tela de opções para o usuario escolher pelo número.
 
@@ -38,6 +42,7 @@ public class TelaVendas implements Tela {
 
     public void cadastrarProduto() throws IOException {
 
+        System.out.println();
         System.out.println("Digite o nome do produto: ");
         String nomeProduto = input.nextLine();
         System.out.println("Digite o valor do produto: ");
@@ -53,14 +58,18 @@ public class TelaVendas implements Tela {
     }
 
     public void deletarProduto() throws IOException {
-        System.out.println("Digite o número do item que deseja deletar?");
 
+        System.out.println();
         produtos.getProdutos();
+        System.out.println();
+        System.out.print("Digite o número do item que deseja deletar: ");
         int excluido = input.nextInt();
+        System.out.println();
 
         produtos.removeProduto(excluido);
         produtos.salvarEmArquivo("produtos.txt");
         System.out.println("Produto removido com sucesso!");
+        System.out.println();
         return;
     }
 

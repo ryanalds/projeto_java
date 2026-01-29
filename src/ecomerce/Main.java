@@ -5,8 +5,10 @@ import model.*;
 
 import telas.*;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 
 public class Main {
 
@@ -42,11 +44,14 @@ public class Main {
         // Loop para o codigo voltar ao menu a depender da escolha do usuario
 
         while (true) {
-            System.out.println("Bem vindo! Digite o número da opção que deseja:");
-            System.out.println(System.lineSeparator());
+            System.out.println();
+            System.out.println("=== MENU ===");
+            System.out.println();
             System.out.println("1 --- Comprar");
             System.out.println("2 --- Vender");
             System.out.println("3 --- Sair");
+            System.out.println();
+            System.out.print("Bem vindo! Digite o número da opção que deseja: ");
 
 
             int escolha = input.nextInt();
