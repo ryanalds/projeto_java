@@ -3,3 +3,4 @@ Teclado;150.0
 Espeto para churrasco;78.0
 Creatina;99.0
 Smart TV;3500.0
+Livro Java efetivo assinado por Lucena;120.0

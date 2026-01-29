@@ -48,6 +48,7 @@ public class TelaVendas implements Tela {
         produtos.addProduto(produto);
         produtos.salvarEmArquivo("produtos.txt");
         System.out.println("Produto cadastrado com sucesso!");
+        return;
 
     }
 
@@ -60,6 +61,7 @@ public class TelaVendas implements Tela {
         produtos.removeProduto(excluido);
         produtos.salvarEmArquivo("produtos.txt");
         System.out.println("Produto removido com sucesso!");
+        return;
     }
 
     public void voltar() {
