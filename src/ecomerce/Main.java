@@ -1,9 +1,8 @@
 package ecomerce;
 
+import auth.AuthService;
 import java.io.IOException;
 import java.util.*;
-
-import auth.AuthService;
 import model.*;
 import telas.*;
 
@@ -37,6 +36,7 @@ public class Main {
                 input.nextLine();
                 continue;
             }
+
             int opcaoInicial = input.nextInt();
             input.nextLine(); // limpar buffer
 
@@ -52,50 +52,75 @@ public class Main {
 
                 if (logado != null) {
                     System.out.println("Login com sucesso! Olá, " + logado.getNome());
-
-                    // vai para o loop da loja
+                    break; // vai para o loop da loja
                     
                 }
+                else {
+                    System.out.println("Email ou senha incorretos.");
+                }
 
+            }
 
+            else if (opcaoInicial == 2) {  // Cadastro:
+
+                System.out.print("Nome: ");
+                String nome = input.nextLine();
+                System.out.print("E-mail: ");
+                String email = input.nextLine();
+                System.out.print("Senha: ");
+                String senha = input.nextLine();
+
+                sistemaCadastro.cadastrarUsuario(nome, email, senha);
+            }
+
+            else if (opcaoInicial == 3) {   // Sair e salvar
+
+                System.out.println("Salvando dados e saindo...");
+                banco.salvarEmArquivo("Usuarios.txt");
+                break; // Encerra o programa
+            }
+            else {
+                System.out.println("Opção inválida.");
+            }
         }
-
         // Loop para o codigo voltar ao menu a depender da escolha do usuario
-
+        
         while (true) {
             System.out.println("Bem vindo! Digite o número da opção que deseja:");
             System.out.println(System.lineSeparator());
             System.out.println("1 --- Comprar");
             System.out.println("2 --- Vender");
             System.out.println("3 --- Sair");
-
-
+            
+            
             int escolha = input.nextInt();
             Tela telaAtual;
-
+            
             if (escolha == 1) {
                 telaAtual = new TelaCompras(estoque);
-
+                
                 telaAtual.mostrar();
                 int opcao = input.nextInt();
                 telaAtual.executarOpcao(opcao);
-
+                
             } else if (escolha == 2) {
                 telaAtual = new TelaVendas(estoque);
                 telaAtual.mostrar();
                 int opcao = input.nextInt();
                 telaAtual.executarOpcao(opcao);
-
+                
             } else if ( escolha == 3) {
                 System.out.println("Obrigado e volte sempre!");
                 break;
-
+                
             } else {
                 System.out.println("Oção invalida");
                 continue;
             }
+            
         }
-
-
+        input.close();
     }
+        
+    
 }
