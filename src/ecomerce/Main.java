@@ -1,12 +1,11 @@
 package ecomerce;
 
-import auth.AuthService;
-import model.*;
-
-import telas.*;
-
 import java.io.IOException;
 import java.util.*;
+
+import auth.AuthService;
+import model.*;
+import telas.*;
 
 public class Main {
 
@@ -17,27 +16,49 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        List<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(new Usuario("Ryan Almeida", "ryanalds21@gmail.com", "poo123@"));
+        BancoUsuarios banco = new BancoUsuarios();  // banco de usuarios instanciado.
+        banco.carregarDeArquivo("Usuarios.txt");  // Carrega os usuários salvos no arquivo .txt
 
-
-        System.out.println("Digite seu e-mail: ");
-        String email = input.nextLine();
-        System.out.println("Digite sua senha: ");
-        String senha = input.nextLine();
-
-        Usuario logado = AuthService.autenticar(email, senha, usuarios);
-        if (logado != null) {
-            System.out.println("Login realizado com sucesso");
-        } else {
-            System.out.println("E-mail ou Senha invalidos");
-            return;
-        }
+        Cadastro sistemaCadastro = new Cadastro(banco); // banco de usuários compartilhado com o sistema de cadastro
 
         // Opções do Menu:
 
         ProdutosEstoque estoque = new ProdutosEstoque(); // Criando lsta global, para armazenar os produtos
         estoque.carregarDeArquivo("produtos.txt"); // Carrega lista com produtos salvos no arquivo .txt
+
+        while(true) {
+            System.out.println("Bem vindo ao E-commerce!");
+            System.out.println("1 --- Fazer Login");
+            System.out.println("2 --- Criar nova conta");
+            System.out.println("3 --- Sair");
+            System.out.println("Escolha uma opção: ");
+
+            if (!input.hasNextInt()){ // verifica se a entrada é um numero inteiro
+                input.nextLine();
+                continue;
+            }
+            int opcaoInicial = input.nextInt();
+            input.nextLine(); // limpar buffer
+
+            if (opcaoInicial == 1) {  // Login:
+           
+                System.out.print("E-mail: ");
+                String email = input.nextLine();
+                System.out.print("Senha: ");
+                String senha = input.nextLine();
+
+                // Verifica na lista do banco
+                Usuario logado = AuthService.autenticar(email, senha, banco.getListaUsuarios());
+
+                if (logado != null) {
+                    System.out.println("Login com sucesso! Olá, " + logado.getNome());
+
+                    // vai para o loop da loja
+                    
+                }
+
+
+        }
 
         // Loop para o codigo voltar ao menu a depender da escolha do usuario
 
