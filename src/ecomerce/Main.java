@@ -71,12 +71,12 @@ public class Main {
                 String senha = input.nextLine();
 
                 sistemaCadastro.cadastrarUsuario(nome, email, senha);
+                banco.salvarEmArquivo("Usuarios.txt");
             }
 
             else if (opcaoInicial == 3) {   // Sair e salvar
 
                 System.out.println("Salvando dados e saindo...");
-                banco.salvarEmArquivo("Usuarios.txt");
                 break; // Encerra o programa
             }
             else {
