@@ -65,6 +65,7 @@ public class TelaCompras implements Tela {
         System.out.println();
         System.out.print("Selecione a forma de pagamento: ");
         int pagamentoSelecionado = input.nextInt();
+        pagamentoSelecionado = pagamentoSelecionado - 1; 
         System.out.println();
         System.out.println("Pagamento realizado com sucesso!");
         return;

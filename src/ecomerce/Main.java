@@ -5,10 +5,8 @@ import model.*;
 
 import telas.*;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
 
 public class Main {
 

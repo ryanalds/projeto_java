@@ -4,7 +4,6 @@ import model.ProdutosEstoque;
 import model.Produto;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.*;
 
 public class TelaVendas implements Tela {
