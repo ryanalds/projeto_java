@@ -1,4 +1,4 @@
-# E-comerce
+
 # Projeto E-commerce - POO
 
 Projeto desenvolvido para a disciplina de Programação Orientada a Objetos (POO).
