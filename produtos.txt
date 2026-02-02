@@ -1,2 +1,17 @@
-Martelete ;1200.0
-piripimps;6.0
+Teclado;150.0
+Espeto para churrasco;78.0
+Creatina;99.0
+Smart TV;3500.0
+Livro Java efetivo assinado por Lucena;120.0
+Memoria ram;15000.0
+Playstation 5;3100.0
+Churrasqueira parrilheira;5200.0
+Canivete;64.0
+Martelo;50.0
+Furadeira Storm;300.0
+Projetor;250.0
+Galaxy s25;2800.0
+Nintendo Switch;2500.0
+Calota para Montana 2007;280.0
+Caneca;39.9
+Jogo de vela golf gt;80.5
