@@ -21,10 +21,6 @@ public class Main {
 
         Cadastro sistemaCadastro = new Cadastro(banco); // banco de usuários compartilhado com o sistema de cadastro
 
-        // Opções do Menu:
-
-        ProdutosEstoque estoque = new ProdutosEstoque(); // Criando lsta global, para armazenar os produtos
-        estoque.carregarDeArquivo("produtos.txt"); // Carrega lista com produtos salvos no arquivo .txt
 
         while(true) {
             System.out.println("Bem vindo ao E-commerce!");
@@ -42,7 +38,7 @@ public class Main {
             input.nextLine(); // limpar buffer
 
             if (opcaoInicial == 1) {  // Login:
-           
+
                 System.out.print("E-mail: ");
                 String email = input.nextLine();
                 System.out.print("Senha: ");
@@ -54,7 +50,7 @@ public class Main {
                 if (logado != null) {
                     System.out.println("Login com sucesso! Olá, " + logado.getNome());
                     break; // vai para o loop da loja
-                    
+
                 }
                 else {
                     System.out.println("Email ou senha incorretos.");
@@ -84,16 +80,22 @@ public class Main {
                 System.out.println("Opção inválida.");
             }
         }
+
+        // Opções do Menu:
+
+        ProdutosEstoque estoque = new ProdutosEstoque(); // Criando lsta global, para armazenar os produtos
+        estoque.carregarDeArquivo("produtos.txt"); // Carrega lista com produtos salvos no arquivo .txt
+
         // Loop para o codigo voltar ao menu a depender da escolha do usuario
-        
+
         while (true) {
             System.out.println("Bem vindo! Digite o número da opção que deseja:");
             System.out.println(System.lineSeparator());
             System.out.println("1 --- Comprar");
             System.out.println("2 --- Vender");
             System.out.println("3 --- Sair");
-            
-            
+
+
             int escolha = input.nextInt();
             Tela telaAtual;
             
