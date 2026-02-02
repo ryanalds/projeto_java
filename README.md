@@ -16,30 +16,7 @@ de um sistema de e-commerce simples.
 
 ## 📂 Estrutura do Projeto
 
-scr/
-├── auth/
-│ └── AuthService.java
-│
-├── ecomerce/
-│ └── Main.java
-│
-├── model/
-│ ├── Pagamento.java
-│ ├── Produto.java
-│ ├── ProdutoEstoque.java
-│ ├── BancoUsuarios.java
-│ ├── Cadastro.java
-│ └── Usuario.java
-│
-├── telas/
-│ ├── Tela.java
-│ ├── TelaCompras.java
-│ └── TelaVendas.java
-│
-├── produtos.txt
-├── Usuarios.txt
-└── README.md
-
+<img width="315" height="507" alt="estrutura" src="https://github.com/user-attachments/assets/14388a17-594d-4858-9e7e-4c5c4baa4d4b" />
 
 ## 🛠️ Tecnologias Utilizadas
 - Java
