@@ -20,6 +20,11 @@ public class Usuario {
         return email;
     }
 
+    public String getSenha(){
+        return senha;
+    }
+    
+
     public boolean validarEmail(String emailDigitado){
         return  this.email.equals((emailDigitado));
     }
